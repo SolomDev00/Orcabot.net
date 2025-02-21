@@ -43,7 +43,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
   };
 
   return (
-    <nav className={`w-full sidebar shadow-md rounded-tl-md rounded-bl-lg`}>
+    <nav className={`w-full sidebar shadow-md rounded-tl-xl rounded-bl-xl`}>
       <div className="sidebar-top-wrapper">
         <div className="sidebar-top">
           <Link
