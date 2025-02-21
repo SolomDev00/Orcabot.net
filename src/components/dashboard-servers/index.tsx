@@ -1,4 +1,4 @@
-import User from "../../assets/customer.svg";
+import User from "../../assets/omda.png";
 import User2 from "../../assets/customer2.svg";
 
 const servers = Array.from({ length: 12 }, () => (

@@ -59,7 +59,7 @@ const AdminDashboardPage = () => {
             <label className="block mb-2 text-lg text-primary">
               المبلغ المطلوب
             </label>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-3">
               {["10$", "20$", "50$", "100$", "200$", "أخرى"].map((amount) => (
                 <button
                   key={amount}
@@ -74,12 +74,12 @@ const AdminDashboardPage = () => {
             <label className="block mb-2 text-lg text-primary">
               طريقة الدفع
             </label>
-            <div className="space-y-3">
-              <label className="flex items-center gap-2 p-3 bg-gray-400 rounded-lg">
+            <div className="flex items-center gap-3">
+              <label className="w-full flex items-center gap-2 p-3 bg-gray-400 rounded-lg">
                 <input type="radio" name="payment" className="w-5 h-5" />
                 <span>PayPal</span>
               </label>
-              <label className="flex items-center gap-2 p-3 bg-gray-400 rounded-lg">
+              <label className="w-full flex items-center gap-2 p-3 bg-gray-400 rounded-lg">
                 <input type="radio" name="payment" className="w-5 h-5" />
                 <span>Credit/Debit Card</span>
               </label>

@@ -1,21 +1,22 @@
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../../components/dashboard-sidebar";
-import { ChartBarBigIcon, Cog, Diamond } from "lucide-react";
+import { CircleDollarSign, Cog, Receipt, UserPlus } from "lucide-react";
 import DashboardNavbar from "../../components/dashboard-navbar";
 import DashboardServer from "../../components/dashboard-servers";
 
-const AdminCompanyLayout = () => {
+const DashboardLayout = () => {
   const links = [
     {
       label: "الرئيسية",
       items: [
-        { href: "/admin/home", icon: ChartBarBigIcon, label: "الاحصائيات" },
-        { href: "/admin/membership", icon: Diamond, label: "العضويات" },
+        { href: "/dashboard/home", icon: CircleDollarSign, label: "المحفظة" },
+        { href: "/dashboard/membership", icon: UserPlus, label: "الاشتراكات" },
+        { href: "/dashboard/fees", icon: Receipt, label: "الفواتير" },
       ],
     },
     {
       label: "الاعدادات",
-      items: [{ href: "/admin/settings", icon: Cog, label: "الصلاحيات" }],
+      items: [{ href: "/dashboard/settings", icon: Cog, label: "الصلاحيات" }],
     },
   ];
 
@@ -33,4 +34,4 @@ const AdminCompanyLayout = () => {
   );
 };
 
-export default AdminCompanyLayout;
+export default DashboardLayout;

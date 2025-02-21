@@ -1,5 +1,5 @@
 import "./Sidebar.style.css";
-import User from "../../assets/customer.svg";
+import User from "../../assets/omda.png";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { SoArrowUp, SoSquareArrowDownRight } from "solom-icon";
@@ -32,10 +32,9 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
     setActiveLink(location.pathname);
   }, [location]);
 
-  // تهيئة جميع الأقسام لتكون مفتوحة عند التحميل الأولي
   useEffect(() => {
     const initialOpenState = links.reduce((acc, { label }) => {
-      acc[label] = true; // كل قسم مفتوح بشكل افتراضي
+      acc[label] = true;
       return acc;
     }, {} as { [key: string]: boolean });
     setOpenCategories(initialOpenState);
@@ -64,7 +63,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
             to={links[0].items[0].href}
             className="flex flex-col items-center justify-center mt-10"
           >
-            <img src={User} alt="Logo" />
+            <img src={User} alt="Logo" className="rounded-full" />
             <h2>Omda</h2>
           </Link>
         </div>
@@ -88,7 +87,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
                   </span>
                 </button>
                 {openCategories[label] && (
-                  <div className="w-full space-y-2 mr-5 pl-5 duration-150 ease-in">
+                  <div className="w-full space-y-1 mr-5 pl-8 duration-150 ease-in">
                     {items.map((item, idx) => (
                       <Link
                         key={idx}

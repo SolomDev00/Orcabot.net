@@ -56,7 +56,7 @@ const routers = createHashRouter(
         <Route path="search" element={<SearchResults />} />
       </Route>
       <Route
-        path="/admin"
+        path="/dashboard"
         element={
           // <AuthenticatedRoute allowedRoles={["admin"]}>
           <AdminCompanyLayout />
