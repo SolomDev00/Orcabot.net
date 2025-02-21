@@ -11,7 +11,7 @@ import {
 } from "solom-icon";
 import toast from "react-hot-toast";
 import Cookies from "universal-cookie";
-import UserImg from "../../assets/user.svg";
+import UserImg from "../../assets/customer2.svg";
 import { useSelector } from "react-redux";
 import { tokenSelector } from "../../app/functions/token";
 import { useNavigate } from "react-router-dom";
@@ -95,12 +95,14 @@ const DashboardNavbar = () => {
         <div className="w-2/5 flex flex-row items-center justify-between space-x-5 max-sm:flex-col max-sm:space-x-0 max-sm:gap-2 max-sm:w-full">
           <div className="flex flex-row items-center justify-center space-x-3 max-sm:w-full max-sm:justify-start">
             <img
-            className="max-sm:w-20"
+              className="max-sm:w-20"
               src={user?.profile_picture ? user?.profile_picture : UserImg}
               alt="User"
             />
             <div className="flex flex-col items-start">
-              <h4 className="text-base text-[#6B7280] max-sm:text-base">Welcome Back,</h4>
+              <h4 className="text-base text-[#6B7280] max-sm:text-base">
+                Welcome Back,
+              </h4>
               <h4 className="text-base text-black/85 font-bold max-sm:text-base">
                 {user?.name}
               </h4>

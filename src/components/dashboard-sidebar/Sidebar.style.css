@@ -1,7 +1,7 @@
 :root {
-  --basic: #6D181B;
-  --accent: #4F0B10;
-  --secondary: #2e2e2e;
+  --basic: #1ec8f7;
+  --accent: #0085ff;
+  --secondary: #127591;
   --white: #fff;
   --shadow-color: #e9e6e4;
   --shadow: 0px 0px 0px 2.4px var(--shadow-color),
@@ -18,7 +18,7 @@
   display: flex;
   color: var(--basic);
   flex-direction: column;
-  background-color: var(--basic);
+  background-color: #3a3a4b;
   transition: max-width 0.2s ease-in-out;
   min-height: 100vh;
 }
@@ -60,9 +60,8 @@ body.collapsed .hide {
   position: relative;
   display: flex;
   justify-content: center;
-  background: var(--basic);
   margin-bottom: 15px;
-  border-bottom: 1px solid #C1C1C1;
+  border-bottom: 1px solid #c1c1c1;
 }
 
 .sidebar-top {
@@ -71,7 +70,7 @@ body.collapsed .hide {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  height: 9rem;
+  height: 9.5rem;
   padding: 1rem;
   padding-bottom: 3rem;
 }
@@ -112,9 +111,9 @@ body.collapsed .sidebar-links-wrapper {
 
 .sidebar-links li svg {
   fill: var(--white);
-  width: 1.2rem;
-  height: 1.2rem;
-  min-width: 1.2rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  min-width: 0.9rem;
 }
 
 .sidebar-links li a svg {
@@ -191,7 +190,7 @@ body.collapsed .divider {
   background: var(--basic);
   z-index: 2;
   box-shadow: var(--shadow);
-  right: -1rem;
+  left: -1rem;
   top: 8rem;
   width: 1.8rem;
   height: 1.8rem;
