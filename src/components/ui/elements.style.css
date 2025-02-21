@@ -1,0 +1,128 @@
+/* *** Slider *** */
+.custom-arrow {
+  background-color: #fff;
+  /* border: 1px solid #b51c1c; */
+  color: #b51c1c;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-next {
+  border: 1px solid #b51c1c;
+  background: linear-gradient(90deg, #ed1c24 0%, #871015 100%);
+  color: #fff;
+}
+
+.custom-next:hover {
+  background: #fff;
+  border: 1px solid #b51c1c;
+  color: #b51c1c;
+}
+
+.custom-prev {
+  border: 1px solid #e0e0e0;
+  background: #e0e0e0;
+  color: #000;
+}
+
+.custom-prev:hover {
+  background: linear-gradient(90deg, #ed1c24 0%, #871015 100%);
+  color: #fff;
+}
+
+.splide__track.splide__track--loop {
+  padding-bottom: 60px;
+}
+
+.splide__pagination.custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 20px;
+}
+
+.splide__pagination__page.custom-page {
+  width: 10px;
+  height: 10px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  transition: background-color 0.3s, width 0.3s;
+}
+
+.splide__pagination__page.is-active.custom-page {
+  background: linear-gradient(90deg, #ed1c24 0%, #871015 100%);
+  width: 32px;
+  height: 10px;
+  border-radius: 8px;
+}
+
+.splide__track {
+  overflow: visible !important;
+}
+
+.is-next,
+.is-prev {
+  background-color: #fef9e2 !important;
+}
+
+#testimonialSection .is-next,
+#testimonialSection .is-prev,
+#product .is-prev,
+#product .is-next {
+  background-color: transparent !important;
+}
+
+#product .splide__track {
+  overflow: hidden !important;
+}
+
+.custom-arrowH {
+  background-color: rgb(0, 0, 0, 20%);
+  /* border: 1px solid #b51c1c; */
+  color: white;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-prevH {
+  left: -55px;
+}
+
+.custom-nextH {
+  right: -55px;
+}
+
+.step-item {
+  @apply relative flex flex-col justify-center items-center w-full;
+}
+.step-item:not(:first-child):before {
+  @apply content-[''] bg-slate-200 absolute w-full h-[3px] left-2/4 top-1/3 -translate-y-2/4;
+}
+.step {
+  @apply w-10 h-10 flex items-center justify-center z-10 relative bg-slate-700 rounded-full font-semibold text-white;
+}
+.active .step {
+  @apply bg-sky-600;
+}
+.complete .step {
+  @apply bg-primary;
+}
+.complete p {
+  @apply text-white;
+}
+.complete:not(:first-child):before,
+.active:not(:first-child):before {
+  @apply bg-primary;
+}

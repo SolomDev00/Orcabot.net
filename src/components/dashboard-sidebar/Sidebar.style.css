@@ -1,0 +1,323 @@
+:root {
+  --basic: #6D181B;
+  --accent: #4F0B10;
+  --secondary: #2e2e2e;
+  --white: #fff;
+  --shadow-color: #e9e6e4;
+  --shadow: 0px 0px 0px 2.4px var(--shadow-color),
+    0px 0px 2.8px 0px var(--shadow-color);
+}
+
+.sidebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  user-select: none;
+  max-width: 15rem;
+  min-width: 4rem;
+  display: flex;
+  color: var(--basic);
+  flex-direction: column;
+  background-color: var(--basic);
+  transition: max-width 0.2s ease-in-out;
+  min-height: 100vh;
+}
+
+.sidebar-top a img {
+  width: 10rem;
+}
+
+.sidebar h2 {
+  color: var(--white);
+  font-size: 0.7rem;
+  margin-top: 1rem;
+  line-height: 1.5rem;
+}
+
+body.collapsed .sidebar h2 {
+  display: none;
+}
+
+body.collapsed .sidebar {
+  max-width: 5rem;
+  display: flex;
+}
+
+body.collapsed .sidebar-links li a {
+  justify-content: center;
+}
+
+body.collapsed .expandC-btn {
+  display: none;
+}
+
+body.collapsed .hide {
+  position: absolute;
+  visibility: hidden;
+}
+
+.sidebar-top-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: var(--basic);
+  margin-bottom: 15px;
+  border-bottom: 1px solid #C1C1C1;
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 9rem;
+  padding: 1rem;
+  padding-bottom: 3rem;
+}
+
+@media not all and (min-width: 640px) {
+  .sidebar-top {
+    height: 9.78rem;
+  }
+}
+
+.logo-small {
+  padding: 0.25rem;
+  overflow: hidden;
+}
+
+.sidebar-links-wrapper {
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+}
+
+body.collapsed .sidebar-links-wrapper {
+  overflow: hidden;
+}
+
+.sidebar-links ul {
+  list-style-type: none;
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+}
+
+.sidebar-links li {
+  color: var(--white);
+  min-width: 3rem;
+  border-radius: 0.75rem;
+}
+
+.sidebar-links li svg {
+  fill: var(--white);
+  width: 1.2rem;
+  height: 1.2rem;
+  min-width: 1.2rem;
+}
+
+.sidebar-links li a svg {
+  stroke: var(--white);
+  fill: var(--white);
+  transition: stroke 0.2s ease-in-out, fill 0.2s ease-in-out;
+}
+
+.sidebar-links li a:hover svg {
+  stroke: var(--white);
+  fill: var(--white);
+}
+
+.sidebar-links .active svg {
+  fill: var(--white);
+}
+
+.sidebar-links li a:hover {
+  background: var(--white);
+  color: var(--basic);
+}
+
+.sidebar-links li a {
+  font-weight: 500;
+  color: var(--white);
+  width: 100%;
+  padding: 0 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  gap: 0.75rem;
+  border-radius: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 3.25rem;
+  text-decoration: none;
+  transition: background 0.2s ease-in-out;
+}
+
+.sidebar-links li a .link {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.sidebar-links .active:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.sidebar-links .active {
+  text-decoration: none;
+  background-color: var(--white);
+  color: var(--basic);
+}
+
+.divider {
+  display: none;
+}
+
+body.collapsed .divider {
+  width: 100%;
+  display: block;
+  background: var(--basic);
+  height: 2px;
+  margin: 0.5rem 0;
+}
+
+.expand-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: var(--basic);
+  z-index: 2;
+  box-shadow: var(--shadow);
+  right: -1rem;
+  top: 8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: none;
+  border-radius: 50%;
+}
+
+.expand-btn svg {
+  transform: rotate(-180deg);
+  stroke: var(--white);
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+body.collapsed .expand-btn svg {
+  transform: rotate(-360deg);
+}
+
+@media not all and (min-width: 640px) {
+  .expand-btn {
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    width: 4rem;
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+.sub-links {
+  margin-left: 1rem;
+}
+
+body.collapsed .sub-links {
+  margin-left: 0;
+}
+
+.sub-links .link {
+  display: block;
+  padding: 0.5rem;
+}
+
+.sub-links .link.active {
+  font-weight: bold;
+  color: var(--white);
+}
+
+.sub-links .tooltip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.sub-links .tooltip.active {
+  background-color: var(--white);
+  color: var(--basic);
+}
+
+span.sub.active {
+  background-color: white;
+  color: var(--basic);
+}
+
+.sub-links .tooltip.active:hover {
+  background-color: var(--accent);
+  color: var(--basic);
+}
+
+span.sub.active:hover {
+  background-color: initial;
+  color: var(--basic);
+}
+
+.expandC-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.expandC-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.expandC-btn svg.rotate {
+  transform: rotate(180deg);
+}
+
+.SoIcon svg {
+  fill: none !important;
+  stroke: var(--basic);
+  stroke-width: 0;
+}
+
+.active .SoIcon svg {
+  stroke: white !important;
+}
+
+.sidebar-logout button {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--basic);
+  color: var(--white);
+  padding: 0.95rem;
+  border-radius: 0.75rem;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  width: 100%;
+}
+
+.sidebar-logout button:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.sidebar-logout button svg {
+  fill: var(--white);
+  width: 1.3rem;
+  height: 1.3rem;
+}

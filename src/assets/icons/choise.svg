@@ -1,0 +1,19 @@
+<svg width="92" height="91" viewBox="0 0 92 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.76416 45.5242C0.76416 20.5412 21.0168 0.288574 45.9998 0.288574C70.9827 0.288574 91.2354 20.5412 91.2354 45.5242C91.2354 70.5071 70.9827 90.7598 45.9998 90.7598C21.0168 90.7598 0.76416 70.5071 0.76416 45.5242Z" fill="url(#paint0_linear_9149_1576)"/>
+<g clip-path="url(#clip0_9149_1576)">
+<path opacity="0.2" d="M45.9996 50.5495C51.5514 50.5495 56.052 46.0489 56.052 40.4972C56.052 34.9454 51.5514 30.4448 45.9996 30.4448C40.4479 30.4448 35.9473 34.9454 35.9473 40.4972C35.9473 46.0489 40.4479 50.5495 45.9996 50.5495Z" fill="white"/>
+<path d="M53.5391 34.2144H61.0783" stroke="white" stroke-width="2.51309" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M57.3086 30.4448V37.9841" stroke="white" stroke-width="2.51309" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30.7622 59.3446C32.3071 56.6707 34.5284 54.4503 37.2031 52.9066C39.8777 51.3629 42.9115 50.5503 45.9997 50.5503C49.0879 50.5503 52.1217 51.363 54.7963 52.9068C57.4709 54.4505 59.6922 56.6709 61.237 59.345" stroke="white" stroke-width="2.51309" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55.4316 43.9814C54.7597 45.7956 53.5782 47.3773 52.0292 48.5364C50.4801 49.6954 48.6293 50.3826 46.6992 50.5153C44.7691 50.6481 42.8417 50.2207 41.1485 49.2845C39.4554 48.3484 38.0686 46.9433 37.1546 45.2381C36.2407 43.5329 35.8385 41.6001 35.9964 39.6719C36.1543 37.7436 36.8656 35.902 38.0448 34.3682C39.224 32.8344 40.8209 31.6737 42.6438 31.0255C44.4667 30.3773 46.4379 30.2692 48.3208 30.7142" stroke="white" stroke-width="2.51309" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_9149_1576" x1="91.2354" y1="45.5242" x2="0.76416" y2="45.5242" gradientUnits="userSpaceOnUse">
+<stop stop-color="#ED1C24"/>
+<stop offset="1" stop-color="#871015"/>
+</linearGradient>
+<clipPath id="clip0_9149_1576">
+<rect width="40.2094" height="40.2094" fill="white" transform="translate(25.895 25.4194)"/>
+</clipPath>
+</defs>
+</svg>
