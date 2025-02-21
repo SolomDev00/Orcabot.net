@@ -43,7 +43,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
   };
 
   return (
-    <nav className={`w-full sidebar shadow-md rounded-tr-md rounded-br-lg`}>
+    <nav className={`w-full sidebar shadow-md rounded-tl-md rounded-bl-lg`}>
       <div className="sidebar-top-wrapper">
         <div className="sidebar-top">
           <Link
@@ -52,7 +52,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
           >
             <img src={Logo} alt="Logo" className={`w-20`} />
           </Link>
-        </div>{" "}
+        </div>
       </div>
       <div className="sidebar-links-wrapper">
         <div>

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../../components/dashboard-sidebar";
 import { ChartBarBigIcon, Diamond } from "lucide-react";
+import DashboardNavbar from "../../components/dashboard-navbar";
 
 const AdminCompanyLayout = () => {
   const links = [
@@ -21,6 +22,7 @@ const AdminCompanyLayout = () => {
 
   return (
     <div className="root-layout bg-[#292930]">
+      <DashboardNavbar />
       <div className="flex flex-row w-full h-full">
         <DashboardSidebar links={links} />
         <div className="container mx-0 px-0 w-full max-w-full pr-12 ml-[3%] max-sm:pr-2">

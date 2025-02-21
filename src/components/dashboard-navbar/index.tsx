@@ -1,26 +1,19 @@
 import "./Navbar.style.css";
 import {
-  SoBell,
-  SoBubbleChat,
-  SoSquareArrowDownRight,
   SoSearch,
   SoApp2,
   SoTrash,
   SoAddSquare,
   SoCity,
+  SoSupport,
 } from "solom-icon";
-import toast from "react-hot-toast";
-import Cookies from "universal-cookie";
-import UserImg from "../../assets/customer2.svg";
-import { useSelector } from "react-redux";
-import { tokenSelector } from "../../app/functions/token";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { SoEditSquare2 } from "solom-icon";
+import Logo from "../../assets/logo.png";
+import Button from "../ui/elements/Button";
 
 const DashboardNavbar = () => {
-  const cookie = new Cookies();
-  const { user } = useSelector(tokenSelector);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const navigate = useNavigate();
@@ -81,43 +74,22 @@ const DashboardNavbar = () => {
     setSuggestions([]);
   };
 
-  const handleLogout = () => {
-    cookie.remove("userLoggedCIT");
-    toast.success("Your are Loggedout!");
-    setTimeout(() => {
-      window.location.replace("/");
-    }, 3500);
-  };
-
   return (
-    <nav className="mt-10 w-full pb-10 border-b border-[#919191] max-sm:pb-9">
+    <nav className="pt-2 w-full pb-2 bg-[#1f1f25]">
       <div className="flex flex-row items-center justify-between gap-6 ml-[3%] pr-4 max-sm:w-full">
-        <div className="w-2/5 flex flex-row items-center justify-between space-x-5 max-sm:flex-col max-sm:space-x-0 max-sm:gap-2 max-sm:w-full">
-          <div className="flex flex-row items-center justify-center space-x-3 max-sm:w-full max-sm:justify-start">
-            <img
-              className="max-sm:w-20"
-              src={user?.profile_picture ? user?.profile_picture : UserImg}
-              alt="User"
-            />
-            <div className="flex flex-col items-start">
-              <h4 className="text-base text-[#6B7280] max-sm:text-base">
-                Welcome Back,
-              </h4>
-              <h4 className="text-base text-black/85 font-bold max-sm:text-base">
-                {user?.name}
-              </h4>
-            </div>
-          </div>
+        <div className="flex flex-row items-center justify-between gap-2">
+          <img className="w-12" src={Logo} alt="logo" />
+          <h3 className="text-xl font-semibold text-gray-400">أوركا بوت</h3>
         </div>
-        <div className="relative w-full max-sm:hidden">
+        <div className="relative w-full max-w-96 max-sm:hidden">
           <input
             type="text"
-            placeholder="Search or jump to..."
-            className="pl-12 pr-4 py-3 w-full rounded-full border border-gray-300 focus:outline-none focus:border-primary"
+            placeholder="ابحث أو اذهب إلى ..."
+            className="pl-4 pr-12 py-2 w-full rounded-full border border-gray-300 focus:outline-none focus:border-primary"
             value={query}
             onChange={handleInputChange}
           />
-          <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary">
+          <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
             <SoSearch className="w-7 h-7" />
           </div>
           {suggestions.length > 0 ? (
@@ -161,29 +133,13 @@ const DashboardNavbar = () => {
             )
           )}
         </div>
-        <div className="flex flex-row items-center justify-center max-sm:w-1/3">
-          <div className="flex flex-row items-center justify-between space-x-5 max-sm:space-x-0">
-            <div
-              className="bg-primary/5 rounded-full p-2 cursor-pointer max-sm:hidden hidden"
-              title="Notifications"
-            >
-              <SoBell className="text-primary w-7 h-7" />
-            </div>
-            <div
-              className="bg-primary/5 rounded-full p-2 cursor-pointer max-sm:hidden hidden"
-              title="Support"
-            >
-              <SoBubbleChat className="text-primary w-7 h-7" />
-            </div>
-            <div
-              className="bg-primary/5 rounded-full p-2 cursor-pointer"
-              title="Logout"
-              onClick={handleLogout}
-            >
-              <SoSquareArrowDownRight className="text-primary w-7 h-7 max-sm:w-6 max-sm:h-6" />
-            </div>
-          </div>
-        </div>
+        <Button
+          variant={"outline"}
+          className="flex flex-row items-center justify-between gap-3 py-1 px-3"
+        >
+          <h3 className="text-base text-gray-400">الدعم الفني</h3>
+          <SoSupport className="text-primary w-5 h-5" />
+        </Button>
       </div>
     </nav>
   );
