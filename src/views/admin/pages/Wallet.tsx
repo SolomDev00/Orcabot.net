@@ -2,7 +2,7 @@ import { ServerCrash } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SoShoppingCart, SoWallet2 } from "solom-icon";
 
-const AdminDashboardPage = () => {
+const WalletPage = () => {
   const transactions = [
     {
       id: 1,
@@ -135,4 +135,4 @@ const AdminDashboardPage = () => {
   );
 };
 
-export default AdminDashboardPage;
+export default WalletPage;

@@ -9,9 +9,17 @@ const DashboardLayout = () => {
     {
       label: "الرئيسية",
       items: [
-        { href: "/dashboard/home", icon: CircleDollarSign, label: "المحفظة" },
-        { href: "/dashboard/membership", icon: UserPlus, label: "الاشتراكات" },
-        { href: "/dashboard/fees", icon: Receipt, label: "الفواتير" },
+        {
+          href: "/dashboard/user/wallet",
+          icon: CircleDollarSign,
+          label: "المحفظة",
+        },
+        {
+          href: "/dashboard/user/membership",
+          icon: UserPlus,
+          label: "الاشتراكات",
+        },
+        { href: "/dashboard/user/bills", icon: Receipt, label: "الفواتير" },
       ],
     },
     {
