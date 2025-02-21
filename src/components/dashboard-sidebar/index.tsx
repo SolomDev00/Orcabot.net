@@ -23,12 +23,23 @@ interface DashboardSidebarProps {
 const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
   const cookie = new Cookies();
   const [activeLink, setActiveLink] = useState<string | null>(null);
-  const [isCategoryOpen, setCategoryOpen] = useState(false);
+  const [openCategories, setOpenCategories] = useState<{
+    [key: string]: boolean;
+  }>({});
   const location = useLocation();
 
   useEffect(() => {
     setActiveLink(location.pathname);
   }, [location]);
+
+  // تهيئة جميع الأقسام لتكون مفتوحة عند التحميل الأولي
+  useEffect(() => {
+    const initialOpenState = links.reduce((acc, { label }) => {
+      acc[label] = true; // كل قسم مفتوح بشكل افتراضي
+      return acc;
+    }, {} as { [key: string]: boolean });
+    setOpenCategories(initialOpenState);
+  }, [links]);
 
   const handleLogout = () => {
     cookie.remove("userLoggedCIT");
@@ -38,8 +49,11 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
     }, 1500);
   };
 
-  const toggleCategoryDropdown = () => {
-    setCategoryOpen(!isCategoryOpen);
+  const toggleCategoryDropdown = (label: string) => {
+    setOpenCategories((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
   };
 
   return (
@@ -59,19 +73,21 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
         <div>
           <ul>
             {links.map(({ label, items }, idx) => (
-              <li className="w-full mb-2" key={idx}>
+              <li className="w-full" key={idx}>
                 <button
-                  onClick={toggleCategoryDropdown}
+                  onClick={() => toggleCategoryDropdown(label)}
                   className={`w-full flex flex-row items-center space-x-2 py-3 px-4 bg-transparent text-gray-300 duration-300`}
                 >
                   <span className="flex items-center gap-2 text-sm">
                     <SoArrowUp
-                      className={isCategoryOpen ? "rotate-180" : "rotate-0"}
+                      className={
+                        openCategories[label] ? "rotate-180" : "rotate-0"
+                      }
                     />
                     {label}
                   </span>
                 </button>
-                {isCategoryOpen && (
+                {openCategories[label] && (
                   <div className="w-full space-y-2 mr-5 pl-5 duration-150 ease-in">
                     {items.map((item, idx) => (
                       <Link
@@ -90,7 +106,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
                       </Link>
                     ))}
                   </div>
-                )}{" "}
+                )}
               </li>
             ))}
           </ul>
