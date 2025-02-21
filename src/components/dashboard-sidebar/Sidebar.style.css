@@ -131,7 +131,7 @@ body.collapsed .sidebar-links-wrapper {
   fill: var(--white);
 }
 
-.sidebar-links li a:hover {
+/* .sidebar-links li a:hover {
   background: var(--white);
   color: var(--basic);
 }
@@ -151,7 +151,7 @@ body.collapsed .sidebar-links-wrapper {
   min-height: 3.25rem;
   text-decoration: none;
   transition: background 0.2s ease-in-out;
-}
+} */
 
 .sidebar-links li a .link {
   overflow: hidden;
@@ -237,11 +237,11 @@ body.collapsed .sub-links {
 
 .sub-links .link {
   display: block;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
 }
 
 .sub-links .link.active {
-  font-weight: bold;
+  /* font-weight: bold; */
   color: var(--white);
 }
 
@@ -252,7 +252,7 @@ body.collapsed .sub-links {
 }
 
 .sub-links .tooltip.active {
-  background-color: var(--white);
+  background-color: var(--primary-100);
   color: var(--basic);
 }
 

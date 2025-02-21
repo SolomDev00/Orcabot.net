@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../../components/dashboard-sidebar";
-import { SoHome } from "solom-icon";
+import { ChartBarBigIcon, Diamond } from "lucide-react";
 
 const AdminCompanyLayout = () => {
   const links = [
     {
       label: "الرئيسية",
-      items: [{ href: "/admin/home", icon: <SoHome />, label: "الاحصائيات" }],
+      items: [
+        { href: "/admin/home", icon: ChartBarBigIcon, label: "الاحصائيات" },
+        { href: "/admin/membership", icon: Diamond, label: "العضويات" },
+      ],
     },
     // {
     //   label: "Settings",

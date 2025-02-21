@@ -5,10 +5,11 @@ import { Link, useLocation } from "react-router-dom";
 import { SoArrowUp, SoSquareArrowDownRight } from "solom-icon";
 import Cookies from "universal-cookie";
 import toast from "react-hot-toast";
+import { LucideIcon } from "lucide-react";
 
 interface SidebarLink {
   href: string;
-  icon: JSX.Element;
+  icon: LucideIcon;
   label: string;
 }
 
@@ -54,10 +55,10 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
         </div>{" "}
       </div>
       <div className="sidebar-links-wrapper">
-        <div className="sidebar-links">
+        <div>
           <ul>
             {links.map(({ label, items }, idx) => (
-              <li className="mb-2" key={idx}>
+              <li className="w-full mb-2" key={idx}>
                 <button
                   onClick={toggleCategoryDropdown}
                   className={`w-full flex flex-row items-center space-x-2 py-3 px-4 bg-transparent text-gray-300 duration-300`}
@@ -70,16 +71,21 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
                   </span>
                 </button>
                 {isCategoryOpen && (
-                  <div className="dropdown-content ml-4">
+                  <div className="w-full space-y-2 mr-5 pl-5 duration-150 ease-in">
                     {items.map((item, idx) => (
                       <Link
                         key={idx}
                         to={item.href}
-                        className={`tooltip ${
-                          activeLink === item.href ? "active" : ""
+                        className={`w-full block py-2 px-3 rounded-lg text-white text-sm font-medium ${
+                          activeLink === item.href
+                            ? "bg-primary"
+                            : "bg-transparent"
                         }`}
                       >
-                        {item.label}
+                        <span className="flex items-center gap-2">
+                          <item.icon className="w-4 h-4" />
+                          {item.label}
+                        </span>
                       </Link>
                     ))}
                   </div>
