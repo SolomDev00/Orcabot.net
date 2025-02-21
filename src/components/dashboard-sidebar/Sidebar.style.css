@@ -24,14 +24,14 @@
 }
 
 .sidebar-top a img {
-  width: 10rem;
+  width: 5rem;
 }
 
 .sidebar h2 {
   color: var(--white);
-  font-size: 0.7rem;
-  margin-top: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+  font-weight: 500;
 }
 
 body.collapsed .sidebar h2 {
@@ -60,8 +60,6 @@ body.collapsed .hide {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #c1c1c1;
 }
 
 .sidebar-top {
@@ -70,7 +68,7 @@ body.collapsed .hide {
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  height: 9.5rem;
+  height: 9rem;
   padding: 1rem;
   padding-bottom: 3rem;
 }
@@ -88,7 +86,7 @@ body.collapsed .hide {
 
 .sidebar-links-wrapper {
   overflow: hidden;
-  padding: 1rem;
+  padding: 0.3rem 1rem;
   position: relative;
 }
 

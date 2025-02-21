@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../../components/dashboard-sidebar";
-import { ChartBarBigIcon, Diamond } from "lucide-react";
+import { ChartBarBigIcon, Cog, Diamond } from "lucide-react";
 import DashboardNavbar from "../../components/dashboard-navbar";
 import DashboardServer from "../../components/dashboard-servers";
 
@@ -13,12 +13,10 @@ const AdminCompanyLayout = () => {
         { href: "/admin/membership", icon: Diamond, label: "العضويات" },
       ],
     },
-    // {
-    //   label: "Settings",
-    //   items: [
-    //     { href: "/admin/settings", icon: <SoSettings />, label: "Settings" },
-    //   ],
-    // },
+    {
+      label: "الاعدادات",
+      items: [{ href: "/admin/settings", icon: Cog, label: "الصلاحيات" }],
+    },
   ];
 
   return (

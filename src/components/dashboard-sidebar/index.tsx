@@ -1,5 +1,5 @@
 import "./Sidebar.style.css";
-import Logo from "../../assets/logo.png";
+import User from "../../assets/customer.svg";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { SoArrowUp, SoSquareArrowDownRight } from "solom-icon";
@@ -48,9 +48,10 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
         <div className="sidebar-top">
           <Link
             to={links[0].items[0].href}
-            className="flex items-center justify-center mt-10"
+            className="flex flex-col items-center justify-center mt-10"
           >
-            <img src={Logo} alt="Logo" className={`w-20`} />
+            <img src={User} alt="Logo" />
+            <h2>Omda</h2>
           </Link>
         </div>
       </div>
