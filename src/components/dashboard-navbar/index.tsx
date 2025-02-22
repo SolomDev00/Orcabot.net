@@ -76,12 +76,12 @@ const DashboardNavbar = () => {
 
   return (
     <nav className="pt-2 w-full pb-2 bg-[#1f1f25]">
-      <div className="flex flex-row items-center justify-between gap-6 ml-[3%] pr-4 max-sm:w-full">
+      <div className="flex flex-row items-center justify-center gap-6 ml-[3%] pr-4 max-sm:w-full">
         <div className="flex flex-row items-center justify-between gap-2">
           <img className="w-12" src={Logo} alt="logo" />
           <h3 className="text-xl font-semibold text-gray-400">أوركا بوت</h3>
         </div>
-        <div className="relative w-full max-w-96 max-sm:hidden">
+        <div className="relative w-full max-w-96 hidden max-sm:hidden">
           <input
             type="text"
             placeholder="ابحث أو اذهب إلى ..."
@@ -135,7 +135,7 @@ const DashboardNavbar = () => {
         </div>
         <Button
           variant={"outline"}
-          className="flex flex-row items-center justify-between gap-3 py-1 px-3"
+          className="hidden flex-row items-center justify-between gap-3 py-1 px-3"
         >
           <h3 className="text-base text-gray-400">الدعم الفني</h3>
           <SoSupport className="text-primary w-5 h-5" />

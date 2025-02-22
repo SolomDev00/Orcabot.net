@@ -47,3 +47,16 @@ li.p-highlight {
   padding: 1rem;
   background-color: transparent;
 }
+
+.bg-prime {
+  background: radial-gradient(
+      259.34% 259.34% at -130.67% -159.34%,
+      rgba(126, 103, 255, 0.2) 0,
+      rgba(126, 103, 255, 0) 100%
+    ),
+    #171821;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+}

@@ -14,10 +14,10 @@ export default function DashboardSelectPlan() {
         activeIndex={activeIndex}
         onTabChange={(e) => setActiveIndex(e.index)}
       >
-        <TabPanel header="شهرياً">
+        <TabPanel header="الاشتراكات الحالية">
           <MonthlyTab />
         </TabPanel>
-        <TabPanel header="سنوياً">
+        <TabPanel header="الاشتراكات السابقة">
           <YearlyTab />
         </TabPanel>
       </TabView>

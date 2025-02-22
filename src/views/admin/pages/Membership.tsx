@@ -1,112 +1,80 @@
+import { SoCheckBadge } from "solom-icon";
+import Button from "../../../components/ui/elements/Button";
 import DashboardSelectPlan from "../../../components/dashboard-tabs";
 
 const SubscriptionsPage = () => {
-  const currentSubscriptions = [
+  const plans = [
     {
-      id: 1,
-      server: "Server A",
-      sector: "Marketing",
-      status: "مفعل",
-      duration: "1 سنة",
-      start: "2024-01-01",
-      end: "2025-01-01",
+      title: "الأشتراك الشهري",
+      description:
+        "أشتراك لمدة شهر كامل شامل كل المميزات (داشبورد + دعم فني + الخ .. )",
+      price: "30$",
+      duration: "/ شهر",
+      features: ["حماية متطورة", "إضافات زيادة", "متاح لوج كامل", "دعم فني"],
+      highlight: false,
     },
     {
-      id: 2,
-      server: "Server B",
-      sector: "Sales",
-      status: "مفعل",
-      duration: "6 أشهر",
-      start: "2024-03-01",
-      end: "2024-09-01",
+      title: "الأشتراك السنوي",
+      description:
+        "أشتراك لمدة سنة كاملة شامل كل المميزات (داشبورد + دعم فني + الخ .. )",
+      price: "299$",
+      duration: "/ سنوياً",
+      features: ["حماية متطورة", "إضافات زيادة", "متاح لوج كامل", "دعم فني"],
+      highlight: false,
     },
-  ];
-
-  const pastSubscriptions = [
     {
-      id: 3,
-      server: "Server C",
-      sector: "Support",
-      status: "منتهي",
-      duration: "1 سنة",
-      start: "2022-01-01",
-      end: "2023-01-01",
+      title: "الأشتراك الربع سنوي",
+      description:
+        "أشتراك لمدة 3 أشهر كاملين شامل كل المميزات (داشبورد + دعم فني + الخ .. )",
+      price: "149$",
+      duration: "/ 3 أشهر",
+      features: ["حماية متطورة", "إضافات زيادة", "متاح لوج كامل", "دعم فني"],
+      highlight: true,
     },
   ];
 
   return (
     <div className="w-full p-5 text-white">
+      <div className="w-full h-auto grid grid-cols-1 lg:grid-cols-2 gap-5 mt-8 mb-12">
+        {plans.map((plan, index) => (
+          <div
+            key={index}
+            className={`w-full bg-[#171821] p-6 rounded-lg border border-[#434164] relative ${
+              plan.highlight ? "bg-prime border-primary" : ""
+            } ${
+              index === 2
+                ? "lg:col-span-2 lg:w-[50%] mx-auto mt-2"
+                : "lg:col-span-1"
+            }`}
+          >
+            {plan.highlight && (
+              <div className="absolute -top-5 -left-4 p-2 px-4 text-white rounded-full border-4 border-[#1E1D2F] gradientBg">
+                الأكثر مبيعاً
+              </div>
+            )}
+            <h3 className="text-white text-2xl mb-3">{plan.title}</h3>
+            <p className="text-gray-400 text-base w-[300px] max-lg:w-[98%] mb-5">
+              {plan.description}
+            </p>
+            <span className="flex flex-row items-end gap-1 mb-5">
+              <h4 className="text-white text-3xl">{plan.price}</h4>
+              <p className="text-gray-400 text-base">{plan.duration}</p>
+            </span>
+            <div className="mb-14">
+              {plan.features.map((feature, i) => (
+                <div key={i} className="flex flex-row items-center gap-3">
+                  <SoCheckBadge className="text-gray-400" />
+                  <p className="text-gray-400">{feature}</p>
+                </div>
+              ))}
+            </div>
+            <Button fullWidth className="bg-primary hover:bg-indigo-700">
+              {`الحصول على ${plan.title}`}
+            </Button>
+          </div>
+        ))}
+      </div>
       <DashboardSelectPlan />
-      <div className="bg-[#3a3a4b] p-6 rounded-xl mb-8">
-        <h2 className="text-2xl font-bold mb-6">الاشتراكات الحالية</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="text-right border-b border-gray-300">
-                <th className="pb-3">رقم الاشتراك</th>
-                <th className="pb-3">السيرفر</th>
-                <th className="pb-3">القطاع</th>
-                <th className="pb-3">الحالة</th>
-                <th className="pb-3">المدة</th>
-                <th className="pb-3">تاريخ البداية</th>
-                <th className="pb-3">تاريخ النهاية</th>
-              </tr>
-            </thead>
-            <tbody>
-              {currentSubscriptions.map((sub) => (
-                <tr key={sub.id} className="border-b border-gray-300">
-                  <td className="py-3">{sub.id}</td>
-                  <td className="py-3">{sub.server}</td>
-                  <td className="py-3">{sub.sector}</td>
-                  <td className="py-3">
-                    <span className="bg-green-800/30 text-green-400 px-2 py-1 rounded">
-                      {sub.status}
-                    </span>
-                  </td>
-                  <td className="py-3">{sub.duration}</td>
-                  <td className="py-3">{sub.start}</td>
-                  <td className="py-3">{sub.end}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div className="bg-[#3a3a4b] p-6 rounded-xl">
-        <h2 className="text-2xl font-bold mb-6">الاشتراكات السابقة</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="text-right border-b border-gray-300">
-                <th className="pb-3">رقم الاشتراك</th>
-                <th className="pb-3">السيرفر</th>
-                <th className="pb-3">القطاع</th>
-                <th className="pb-3">الحالة</th>
-                <th className="pb-3">المدة</th>
-                <th className="pb-3">تاريخ البداية</th>
-                <th className="pb-3">تاريخ النهاية</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pastSubscriptions.map((sub) => (
-                <tr key={sub.id} className="border-b border-gray-300">
-                  <td className="py-3">{sub.id}</td>
-                  <td className="py-3">{sub.server}</td>
-                  <td className="py-3">{sub.sector}</td>
-                  <td className="py-3">
-                    <span className="bg-red-800/30 text-red-400 px-2 py-1 rounded">
-                      {sub.status}
-                    </span>
-                  </td>
-                  <td className="py-3">{sub.duration}</td>
-                  <td className="py-3">{sub.start}</td>
-                  <td className="py-3">{sub.end}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
   );
 };

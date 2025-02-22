@@ -1,54 +1,52 @@
-import Button from "../../ui/elements/Button";
 import "../Tab.style.css";
 
 export default function YearlyTab() {
+  const pastSubscriptions = [
+    {
+      id: 3,
+      server: "Server C",
+      sector: "Support",
+      status: "منتهي",
+      duration: "1 سنة",
+      start: "2022-01-01",
+      end: "2023-01-01",
+    },
+  ];
+
   return (
-    <div className="w-full h-auto flex flex-row items-center justify-between">
-      <div className="w-full flex flex-row items-center justify-between gap-5 mt-5 max-sm:flex-col">
-        <div className="w-full bg-white p-3 rounded-2xl flex flex-col items-center justify-between space-y-4 relative overflow-hidden max-sm:w-full">
-          <div
-            className="absolute top-0 left-0 w-full h-12 rounded-md"
-            style={{
-              background: "linear-gradient(135deg, #FFC327 0%, #ffffff 100%)",
-            }}
-          ></div>
-          <div className="flex flex-col items-center justify-between space-y-8 pt-6">
-            <h3 className="text-[#FFC327] text-3xl font-semibold mt-2">
-              العضوية الذهبية
-            </h3>
-            <div className="bg-[#FFF4F0] p-3 rounded-xl text-center flex items-end gap-1">
-              <h2 className="text-[#FFC327] text-5xl font-bold">$700</h2>
-              <h3 className="text-gray-500 text-lg font-semibold">/ سنوياً</h3>
-            </div>
-            <h3 className="text-black text-2xl font-medium">سبايسي مرتين</h3>
-          </div>
-          <Button fullWidth className="bg-[#FFC327] hover:bg-[#FFC327]/90">
-            اختيار الخطة
-          </Button>
-        </div>
-        <div className="w-full bg-white p-3 rounded-2xl flex flex-col items-center justify-between space-y-4 relative overflow-hidden max-sm:w-full">
-          <div
-            className="absolute top-0 left-0 w-full h-12 rounded-md"
-            style={{
-              background: "linear-gradient(135deg, #A0AEC0 0%, #ffffff 100%)",
-            }}
-          ></div>
-          <div className="flex flex-col items-center justify-between space-y-8 pt-6">
-            <h3 className="text-[#A0AEC0] text-3xl font-semibold mt-2">
-              العضوية الفضية
-            </h3>
-            <div className="bg-[#FFF4F0] p-3 rounded-xl text-center flex items-end gap-1">
-              <h2 className="text-[#A0AEC0] text-5xl font-bold">$300</h2>
-              <h3 className="text-gray-500 text-lg font-semibold">/ سنوياً</h3>
-            </div>
-            <h3 className="text-black text-2xl font-medium">
-              سبايسي مرة واحده
-            </h3>
-          </div>
-          <Button fullWidth className="bg-[#A0AEC0] hover:bg-[#A0AEC0]/90">
-            اختيار الخطة
-          </Button>
-        </div>
+    <div className="bg-[#3a3a4b] text-white p-6 rounded-xl mt-5">
+      <h2 className="text-2xl font-bold mb-6">الاشتراكات السابقة</h2>
+      <div className="overflow-x-auto">
+        <table className="w-full">
+          <thead>
+            <tr className="text-right border-b border-gray-300">
+              <th className="pb-3">رقم الاشتراك</th>
+              <th className="pb-3">السيرفر</th>
+              <th className="pb-3">القطاع</th>
+              <th className="pb-3">الحالة</th>
+              <th className="pb-3">المدة</th>
+              <th className="pb-3">تاريخ البداية</th>
+              <th className="pb-3">تاريخ النهاية</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pastSubscriptions.map((sub) => (
+              <tr key={sub.id} className="border-b border-gray-300">
+                <td className="py-3">{sub.id}</td>
+                <td className="py-3">{sub.server}</td>
+                <td className="py-3">{sub.sector}</td>
+                <td className="py-3">
+                  <span className="bg-red-800/30 text-red-400 px-2 py-1 rounded">
+                    {sub.status}
+                  </span>
+                </td>
+                <td className="py-3">{sub.duration}</td>
+                <td className="py-3">{sub.start}</td>
+                <td className="py-3">{sub.end}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
