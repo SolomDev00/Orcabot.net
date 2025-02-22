@@ -1,9 +1,8 @@
 import { ServerCrash } from "lucide-react";
-import { Link } from "react-router-dom";
 import { SoShoppingCart, SoWallet2 } from "solom-icon";
 import DashboardLineChart from "../../../components/dashboard-charts/LineChart";
-import Paypal from "../../../assets/icons/paypal.svg";
-import Credit from "../../../assets/icons/credit-card.png";
+import PaymentSection from "../../../components/ui/Payment";
+import { Link } from "react-router-dom";
 
 const WalletPage = () => {
   const transactions = [
@@ -92,36 +91,19 @@ const WalletPage = () => {
               ))}
             </div>
           </div>
-          <div className="mb-6">
-            <label className="block mb-2 text-lg text-primary">
+          <div className="mb-3">
+            <label className="block mb-3 text-lg text-primary">
               طريقة الدفع
             </label>
-            <div className="flex items-center gap-3">
-              <label className="w-full flex items-center gap-2 p-3 bg-gray-400 rounded-lg">
-                <div className="w-full flex items-center gap-1">
-                  <input type="radio" name="payment" className="w-5 h-5" />
-                  <span className="text-sm">PayPal</span>
-                </div>
-                <img className="w-12" src={Paypal} alt="Paypal" />
-              </label>
-              <label className="w-full flex items-center gap-2 p-3 bg-gray-400 rounded-lg">
-                <div className="w-full flex items-center gap-1">
-                  <input type="radio" name="payment" className="w-5 h-5" />
-                  <span className="text-sm">Credit/Debit Card</span>
-                </div>
-                <img className="w-12" src={Credit} alt="Credit" />
-              </label>
-            </div>
+            <PaymentSection />
           </div>
-          <div className="text-sm text-white mb-6">
-            للدفع بطرق أخرى، الرجاء التواصل مع الدعم عبر{" "}
-            <Link to="/#" className="text-primary ml-1">
-              الديسكورد
+          <p className="text-sm text-gray-400 text-right">
+            للدفع بطرق اخري مثل تحويل بنكي او اس تي سي باي او كريبتو او غيره
+            الرجاء التواصل مع{" "}
+            <Link to="/support" className="text-primary hover:underline">
+              الدعم عبر الديسكورد
             </Link>
-          </div>
-          <button className="w-full py-3 bg-primary rounded-lg hover:bg-opacity-90 transition-colors">
-            إتمام عملية الدفع
-          </button>
+          </p>
         </div>
       </div>
       <div className="p-6 bg-[#3a3a4b] rounded-xl">

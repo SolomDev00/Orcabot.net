@@ -2,7 +2,14 @@ import "./Sidebar.style.css";
 import User from "../../assets/omda.png";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { SoArrowUp, SoSquareArrowDownRight } from "solom-icon";
+import {
+  SoAddNote,
+  SoArrowLeft,
+  SoArrowUp,
+  SoCatalogue,
+  SoLink,
+  SoSquareArrowDownRight,
+} from "solom-icon";
 import Cookies from "universal-cookie";
 import toast from "react-hot-toast";
 import { ArrowLeftRight, LucideIcon } from "lucide-react";
@@ -157,25 +164,72 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
         <SoSquareArrowDownRight className="w-6 h-6" />
       </button>
       <RightModal isOpen={isOpen} closeModal={() => setIsOpen(false)}>
-        <div className="flex flex-col">
-          <h3 className="text-3xl font-semibold text-primary">
-            السيرافرات المضافة
-          </h3>
-          <div className="w-48 h-0.5 gradientBg mt-2" />
-          <div className="mt-8 grid grid-cols-6 gap-3">
-            {servers.map((server) => {
-              return server;
-            })}
+        <div className="flex flex-col space-y-8 px-6">
+          <div className="flex items-center gap-4 pb-6 border-b border-gray-400">
+            <img
+              src={User}
+              className="w-16 h-16 rounded-full object-cover cursor-pointer hover:opacity-80"
+              alt="User Profile"
+            />
+            <div>
+              <h3 className="text-2xl font-bold text-white">Omda</h3>
+              <Link
+                to="/profile"
+                className="text-primary hover:text-primary/80 text-sm flex items-center gap-1"
+              >
+                الذهاب إلي لوحة التحكم <SoArrowLeft />
+              </Link>
+            </div>
           </div>
-          <div className="mt-8">
-            <h3 className="text-3xl font-semibold text-primary">
-              قم بإضافة البوت إلي
-            </h3>
-            <div className="w-48 h-0.5 gradientBg mt-3" />
-            <div className="mt-8 grid grid-cols-6 gap-3">
-              {activeServers.map((server) => {
-                return server;
-              })}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-semibold text-white flex items-center gap-2">
+                <SoCatalogue /> السيرفرات المُدارة ({servers.length})
+              </h3>
+              <span className="text-gray-400 text-sm">البوت مضاف حاليًا</span>
+            </div>
+            <div className="grid grid-cols-6 gap-4">
+              {servers.map((_, index) => (
+                <div key={index} className="group relative">
+                  <img
+                    className="w-full rounded-xl hover:scale-105 duration-200 cursor-pointer"
+                    src={User2}
+                    alt="server"
+                  />
+                  <div className="hidden absolute bottom-0 left-0 right-0 p-2 bg-black/60 rounded-b-xl">
+                    <p className="text-white text-xs truncate">
+                      السيرفر {index + 1}
+                    </p>
+                    <button className="text-[10px] text-primary hover:underline">
+                      إدارة الإعدادات
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-semibold text-white flex items-center gap-2">
+                <SoAddNote /> سيرفرات متاحة ({activeServers.length})
+              </h3>
+              <span className="text-gray-400 text-sm">أضف البوت إليهم</span>
+            </div>
+            <div className="grid grid-cols-6 gap-4">
+              {activeServers.map((_, index) => (
+                <div key={index} className="group relative">
+                  <img
+                    className="w-full rounded-xl hover:scale-105 duration-200 cursor-pointer"
+                    src={User3}
+                    alt="server"
+                  />
+                  <div className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button className="p-1 rounded-full text-xl text-white">
+                      <SoLink />
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
