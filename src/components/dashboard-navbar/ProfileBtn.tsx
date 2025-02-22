@@ -60,7 +60,7 @@ export default function ProfileBtn() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel className="absolute left-[100%] z-10 mt-3 w-screen max-w-72 -translate-x-1/2 transform px-3 sm:px-0">
-                <div className="bg-gray-50 overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5 z-20 py-1">
+                <div className="bg-gray-200 overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5 z-20 py-1">
                   {links.map((link) => (
                     <div className="my-1 px-2">
                       <Link
