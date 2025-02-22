@@ -114,7 +114,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
               <li className="w-full" key={idx}>
                 <button
                   onClick={() => toggleCategoryDropdown(label)}
-                  className={`w-full flex flex-row items-center space-x-2 py-3 px-4 bg-transparent text-gray-300 duration-300 hover:bg-gray-700/50 rounded-lg`}
+                  className={`w-full flex flex-row items-center space-x-2 py-3 px-4 bg-transparent text-gray-300 duration-300 rounded-lg`}
                 >
                   <span className="flex items-center gap-2 text-sm">
                     <SoArrowUp
@@ -134,7 +134,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ links }) => {
                         className={`w-full block py-2 px-3 rounded-lg text-white text-sm font-medium ${
                           activeLink === item.href
                             ? "bg-primary"
-                            : "bg-transparent hover:bg-gray-700/50"
+                            : "bg-transparent hover:bg-primary/50"
                         }`}
                       >
                         <span className="flex items-center gap-2">

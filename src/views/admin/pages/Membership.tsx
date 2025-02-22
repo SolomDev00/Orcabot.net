@@ -48,7 +48,7 @@ const SubscriptionsPage = () => {
             }`}
           >
             {plan.highlight && (
-              <div className="absolute -top-5 -left-4 p-2 px-4 text-white rounded-full border-4 border-[#1E1D2F] gradientBg">
+              <div className="absolute -top-5 -left-4 p-2 px-4 text-white rounded-full border-4 border-[#434164] gradientBg">
                 الأكثر مبيعاً
               </div>
             )}

@@ -7,7 +7,7 @@ import {
   SoCity,
   SoSupport,
 } from "solom-icon";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { SoEditSquare2 } from "solom-icon";
 import Logo from "../../assets/logo.png";
@@ -77,10 +77,13 @@ const DashboardNavbar = () => {
   return (
     <nav className="pt-2 w-full pb-2 bg-[#1f1f25]">
       <div className="flex flex-row items-center justify-center gap-6 ml-[3%] pr-4 max-sm:w-full">
-        <div className="flex flex-row items-center justify-between gap-2">
+        <Link
+          to={"/dashboard/user/wallet"}
+          className="flex flex-row items-center justify-between gap-2"
+        >
           <img className="w-12" src={Logo} alt="logo" />
           <h3 className="text-xl font-semibold text-gray-400">أوركا بوت</h3>
-        </div>
+        </Link>
         <div className="relative w-full max-w-96 hidden max-sm:hidden">
           <input
             type="text"

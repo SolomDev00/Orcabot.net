@@ -1,6 +1,12 @@
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../../components/dashboard-sidebar";
-import { CircleDollarSign, Cog, Receipt, UserPlus } from "lucide-react";
+import {
+  ArrowLeftRight,
+  CircleDollarSign,
+  LogOut,
+  Receipt,
+  UserPlus,
+} from "lucide-react";
 import DashboardNavbar from "../../components/dashboard-navbar";
 
 const DashboardLayout = () => {
@@ -22,8 +28,15 @@ const DashboardLayout = () => {
       ],
     },
     {
-      label: "الاعدادات",
-      items: [{ href: "/dashboard/settings", icon: Cog, label: "الصلاحيات" }],
+      label: "آخري",
+      items: [
+        {
+          href: "/dashboard/switch",
+          icon: ArrowLeftRight,
+          label: "تغيير السيرفر",
+        },
+        { href: "/dashboard/logout", icon: LogOut, label: "تسجيل الخروج" },
+      ],
     },
   ];
 
