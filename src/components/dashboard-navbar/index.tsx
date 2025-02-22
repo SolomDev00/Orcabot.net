@@ -12,6 +12,7 @@ import { useState } from "react";
 import { SoEditSquare2 } from "solom-icon";
 import Logo from "../../assets/logo.png";
 import Button from "../ui/elements/Button";
+import ProfileBtn from "./ProfileBtn";
 
 const DashboardNavbar = () => {
   const [query, setQuery] = useState("");
@@ -75,8 +76,8 @@ const DashboardNavbar = () => {
   };
 
   return (
-    <nav className="pt-2 w-full pb-2 bg-[#1f1f25]">
-      <div className="flex flex-row items-center justify-center gap-6 ml-[3%] pr-4 max-sm:w-full">
+    <nav className="w-[90%] bg-[#1f1f25] py-2 mx-auto">
+      <div className="flex flex-row items-center justify-between gap-6 max-sm:w-full">
         <Link
           to={"/dashboard/user/wallet"}
           className="flex flex-row items-center justify-between gap-2"
@@ -143,6 +144,7 @@ const DashboardNavbar = () => {
           <h3 className="text-base text-gray-400">الدعم الفني</h3>
           <SoSupport className="text-primary w-5 h-5" />
         </Button>
+        <ProfileBtn />
       </div>
     </nav>
   );
