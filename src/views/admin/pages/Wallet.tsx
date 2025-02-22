@@ -2,6 +2,8 @@ import { ServerCrash } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SoShoppingCart, SoWallet2 } from "solom-icon";
 import DashboardLineChart from "../../../components/dashboard-charts/LineChart";
+import Paypal from "../../../assets/icons/paypal.svg";
+import Credit from "../../../assets/icons/credit-card.png";
 
 const WalletPage = () => {
   const transactions = [
@@ -96,12 +98,18 @@ const WalletPage = () => {
             </label>
             <div className="flex items-center gap-3">
               <label className="w-full flex items-center gap-2 p-3 bg-gray-400 rounded-lg">
-                <input type="radio" name="payment" className="w-5 h-5" />
-                <span>PayPal</span>
+                <div className="w-full flex items-center gap-1">
+                  <input type="radio" name="payment" className="w-5 h-5" />
+                  <span className="text-sm">PayPal</span>
+                </div>
+                <img className="w-12" src={Paypal} alt="Paypal" />
               </label>
               <label className="w-full flex items-center gap-2 p-3 bg-gray-400 rounded-lg">
-                <input type="radio" name="payment" className="w-5 h-5" />
-                <span>Credit/Debit Card</span>
+                <div className="w-full flex items-center gap-1">
+                  <input type="radio" name="payment" className="w-5 h-5" />
+                  <span className="text-sm">Credit/Debit Card</span>
+                </div>
+                <img className="w-12" src={Credit} alt="Credit" />
               </label>
             </div>
           </div>
