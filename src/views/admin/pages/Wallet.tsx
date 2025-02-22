@@ -1,6 +1,7 @@
 import { ServerCrash } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SoShoppingCart, SoWallet2 } from "solom-icon";
+import DashboardLineChart from "../../../components/dashboard-charts/LineChart";
 
 const WalletPage = () => {
   const transactions = [
@@ -27,6 +28,21 @@ const WalletPage = () => {
     },
   ];
 
+  const sampleData = [
+    { name: "January", value: 40 },
+    { name: "February", value: 30 },
+    { name: "March", value: 20 },
+    { name: "April", value: 80 },
+    { name: "May", value: 90 },
+    { name: "June", value: 80 },
+    { name: "July", value: 74 },
+    { name: "August", value: 68 },
+    { name: "September", value: 38 },
+    { name: "October", value: 20 },
+    { name: "November", value: 31 },
+    { name: "December", value: 50 },
+  ];
+
   return (
     <div className="w-full p-5 text-white">
       <div className="flex justify-between items-center gap-4 mb-8">
@@ -51,6 +67,10 @@ const WalletPage = () => {
           </div>
           <SoShoppingCart className="w-14 h-14" />
         </div>
+      </div>
+      <div className="bg-[#3a3a4b] rounded-lg p-6 shadow-lg mb-8 hidden">
+        <h2 className="text-2xl font-bold mb-4">المدفوعات</h2>
+        <DashboardLineChart data={sampleData} />
       </div>
       <div className="mb-8 p-6 bg-[#3a3a4b] rounded-xl">
         <h2 className="text-2xl font-bold mb-6">شحن الرصيد</h2>

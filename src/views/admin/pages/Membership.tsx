@@ -17,7 +17,7 @@ const SubscriptionsPage = () => {
       title: "الأشتراك السنوي",
       description:
         "أشتراك لمدة سنة كاملة شامل كل المميزات (داشبورد + دعم فني + الخ .. )",
-      price: "299$",
+      price: "215$",
       duration: "/ سنوياً",
       features: ["حماية متطورة", "إضافات زيادة", "متاح لوج كامل", "دعم فني"],
       highlight: false,
@@ -26,7 +26,7 @@ const SubscriptionsPage = () => {
       title: "الأشتراك الربع سنوي",
       description:
         "أشتراك لمدة 3 أشهر كاملين شامل كل المميزات (داشبورد + دعم فني + الخ .. )",
-      price: "149$",
+      price: "70$",
       duration: "/ 3 أشهر",
       features: ["حماية متطورة", "إضافات زيادة", "متاح لوج كامل", "دعم فني"],
       highlight: true,
@@ -39,7 +39,7 @@ const SubscriptionsPage = () => {
         {plans.map((plan, index) => (
           <div
             key={index}
-            className={`w-full bg-[#171821] p-6 rounded-lg border border-[#434164] relative ${
+            className={`w-full bg-[#3a3a4b] p-6 rounded-lg border border-[#434164] relative ${
               plan.highlight ? "bg-prime border-primary" : ""
             } ${
               index === 2
@@ -60,7 +60,7 @@ const SubscriptionsPage = () => {
               <h4 className="text-white text-3xl">{plan.price}</h4>
               <p className="text-gray-400 text-base">{plan.duration}</p>
             </span>
-            <div className="mb-14">
+            <div className="mb-8">
               {plan.features.map((feature, i) => (
                 <div key={i} className="flex flex-row items-center gap-3">
                   <SoCheckBadge className="text-gray-400" />
@@ -68,7 +68,7 @@ const SubscriptionsPage = () => {
                 </div>
               ))}
             </div>
-            <Button fullWidth className="bg-primary hover:bg-indigo-700">
+            <Button fullWidth className="bg-primary hover:bg-primary/90">
               {`الحصول على ${plan.title}`}
             </Button>
           </div>
