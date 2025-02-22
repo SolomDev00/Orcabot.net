@@ -29,6 +29,7 @@ import DoneCheckoutPage from "../views/pages/cart/DoneCheckout";
 import AdminCompanyLayout from "../views/admin/Layout";
 import WalletPage from "../views/admin/pages/Wallet";
 import SubscriptionsPage from "../views/admin/pages/Membership";
+import InvoicesPage from "../views/admin/pages/Invoices";
 // import AdminDashboardPage from "../views/admin";
 // import AdminCompanyLayout from "../views/admin/Layout";
 // import AdminServicesPage from "../views/admin/pages/Services";
@@ -68,6 +69,7 @@ const routers = createHashRouter(
         <Route path="user" errorElement={<ErrorHandler />}>
           <Route path="wallet" element={<WalletPage />} />
           <Route path="membership" element={<SubscriptionsPage />} />
+          <Route path="invoice" element={<InvoicesPage />} />
         </Route>
         <Route index element={<Navigate to="user/wallet" replace />} />
       </Route>

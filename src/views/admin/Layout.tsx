@@ -24,7 +24,7 @@ const DashboardLayout = () => {
           icon: UserPlus,
           label: "الاشتراكات",
         },
-        { href: "/dashboard/user/bills", icon: Receipt, label: "الفواتير" },
+        { href: "/dashboard/user/invoice", icon: Receipt, label: "الفواتير" },
       ],
     },
     {
