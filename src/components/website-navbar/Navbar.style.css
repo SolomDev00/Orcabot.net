@@ -59,14 +59,14 @@
   align-items: center;
 }
 
-.logoCIT {
+.logo {
   cursor: pointer;
   display: flex;
   align-items: center;
   width: 4rem;
 }
 
-.logoCIT img {
+.logo img {
   height: 4rem;
 }
 
@@ -97,11 +97,10 @@
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
-  color: var(--primary);
 }
 
 .navigationBar > li > a:hover {
-  color: var(--primary);
+  color: var(--primary-200);
 }
 
 .navigationBar > li > button {
@@ -134,7 +133,7 @@
 }
 
 .navigationBar > li:hover > button {
-  color: var(--primary);
+  color: var(--primary-200);
 }
 
 .navigationBar > li:hover .dropdown {
@@ -183,7 +182,7 @@
 }
 
 .navigationBar a.active {
-  color: var(--primary);
+  color: white;
   font-weight: 600;
 }
 
@@ -203,7 +202,7 @@
 
 .secondaryBar {
   padding: 8px 20px;
-  color: var(--primary);
+  color: var(--primary-200);
   border-radius: 0.5rem;
   background-color: white;
 }
@@ -212,16 +211,16 @@
   text-decoration: underline;
 }
 
-.primaryBar {
+.primary-200Bar {
   padding: 8px 32px;
   color: white;
-  border: 2px solid var(--primary);
-  background-color: var(--primary);
+  border: 2px solid var(--primary-200);
+  background-color: var(--primary-200);
 }
 
-.primaryBar:hover {
+.primary-200Bar:hover {
   background-color: white;
-  color: var(--primary);
+  color: var(--primary-200);
 }
 
 .burger-menu {
@@ -229,7 +228,7 @@
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: var(--primary);
+  background-color: var(--primary-200);
 }
 
 body.menu-open {
@@ -254,7 +253,7 @@ body.menu-closed {
     height: 3.2rem;
     width: 3.2rem;
     cursor: pointer;
-    background-color: var(--primary);
+    background-color: var(--primary-200);
     z-index: 1001;
     position: relative;
     transition-duration: 150ms;

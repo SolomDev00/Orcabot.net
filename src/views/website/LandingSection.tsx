@@ -1,4 +1,5 @@
 import { SoStar } from "solom-icon";
+import Button from "../../components/ui/elements/Button";
 
 const LandingSection = () => {
   return (
@@ -39,20 +40,8 @@ const LandingSection = () => {
             احتياجاتك الفريدة ...
           </p>
           <div className="flex flex-row justify-between items-center gap-5">
-            <button
-              data-aos="fade-left"
-              data-aos-duration="900"
-              className="bg-indigo-600 hover:bg-indigo-500 py-2 px-4 flex items-center justify-center rounded-md font-medium text-black duration-500 dark:text-white disabled:bg-primary disabled:hover:bg-indigo-600 disabled:cursor-not-allowed"
-            >
-              ضفُ إلى سيرفرك
-            </button>
-            <button
-              data-aos="fade-right"
-              data-aos-duration="900"
-              className="bg-indigo-600 hover:bg-indigo-500 py-2 px-4 flex items-center justify-center rounded-md font-medium text-black duration-500 dark:text-white disabled:bg-primary disabled:hover:bg-indigo-600 disabled:cursor-not-allowed"
-            >
-              رؤية المميزات
-            </button>
+            <Button className="gradientBg py-2 px-6">ضفُ إلى سيرفرك</Button>
+            <Button className="gradientBg py-2 px-6">رؤية المميزات</Button>
           </div>
         </div>
       </div>

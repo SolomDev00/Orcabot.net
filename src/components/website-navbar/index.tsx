@@ -1,7 +1,7 @@
 import "./Navbar.style.css";
 import Cookies from "universal-cookie";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import LogoImg from "../../assets/logo.svg";
+import LogoImg from "../../assets/logo.png";
 import { useEffect, useState } from "react";
 import ProfileBtn from "../dashboard-navbar/ProfileBtn";
 import {
@@ -143,7 +143,7 @@ const Navbar = () => {
     >
       <div
         className={`navbar-wrapper duration-200 ${
-          scrolling ? "bg-white" : "text-primary"
+          scrolling ? "bg-[#12131a]" : "text-primary"
         }`}
         style={{
           background: `${window.scrollY < 10 ? "transparent" : ""}`,
@@ -154,9 +154,9 @@ const Navbar = () => {
           <NavLink
             onClick={() => scroll.scrollToTop()}
             to="/"
-            title={"CIT"}
+            title={"Orcabot"}
             aria-label="home"
-            className="logoCIT"
+            className="logo"
           >
             <img className={`ml-0`} src={LogoImg} alt="logo" />
           </NavLink>
@@ -178,10 +178,10 @@ const Navbar = () => {
                   className={({ isActive }: { isActive: boolean }) =>
                     isActive ? "active duration-200" : "nav-link duration-200"
                   }
-                  to="/menu"
-                  title="قائمة الطعام"
+                  to="/about-us"
+                  title="من نحن ؟"
                 >
-                  قائمة الطعام
+                  من نحن ؟
                 </NavLink>
               </li>
               <li>
@@ -189,10 +189,10 @@ const Navbar = () => {
                   className={({ isActive }: { isActive: boolean }) =>
                     isActive ? "active duration-200" : "nav-link duration-200"
                   }
-                  to="/about-us"
-                  title="من نحن ؟"
+                  to="/menu"
+                  title="الباقات"
                 >
-                  من نحن ؟
+                  الباقات
                 </NavLink>
               </li>
               <li>
@@ -231,7 +231,7 @@ const Navbar = () => {
               <div className="absolute top-8 -right-64 w-[300px] bg-white shadow-lg p-2 flex items-center border rounded-md">
                 <input
                   type="text"
-                  placeholder="ابحث عن الطعام..."
+                  placeholder="ابحث عن الباقات..."
                   className="w-full p-2 outline-none"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
@@ -260,7 +260,7 @@ const Navbar = () => {
             <Link
               to="/auth/login"
               title="تسجيل الدخول"
-              className={`primaryBar text-white font-medium rounded-3xl text-base`}
+              className={`gradientBg px-8 py-3 text-white font-medium rounded-3xl text-base`}
             >
               تسجيل الدخول
             </Link>
