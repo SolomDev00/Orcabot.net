@@ -1,43 +1,33 @@
 import { SoStar } from "solom-icon";
 import Button from "../../components/ui/elements/Button";
+import { Link } from "react-router-dom";
 
 const LandingSection = () => {
   return (
     <section id="hero">
-      <div className="mt-48 flex flex-col justify-center items-center max-sm:container">
+      <div className="mt-40 flex flex-col justify-center items-center max-sm:container">
         <div className="flex flex-col justify-center items-center gap-8">
-          <a href="./pages/subscriptions.html">
-            <div
-              data-aos="fade-up"
-              className="welcome-box py-[8px] px-4 border border-[#7042f88b] opacity-[0.9] cursor-pointer"
-            >
+          <Link to="./pages/subscriptions.html">
+            <div className="welcome-box py-[8px] px-4 border border-primary opacity-[0.9] cursor-pointer">
               <h3 className="welcome-text text-base pr-1">
                 متاح الأشتراكات الآن
               </h3>
-              <SoStar className="text-[#8b64ff] mr-[10px] w-6" />
+              <SoStar className="text-primary mr-[10px] w-6" />
             </div>
-          </a>
-          <h2
-            data-aos="fade-up"
-            data-aos-duration="500"
-            className="text-3xl text-white text-center w-[500px] max-sm:text-2xl max-sm:w-[400px]"
-          >
+          </Link>
+          <h2 className="text-4xl text-white text-center w-[600px] max-sm:text-2xl max-sm:w-[400px]">
             <span className="liner cursor-pointer">
               رفيقك الذكي لإدارة السيرفر الخاص بك{" "}
             </span>
             بكفاءة <span className="mark">عالية</span> وسهولة.
           </h2>
-          <p
-            data-aos="fade-up"
-            data-aos-duration="700"
-            className="text-lg text-gray-400 text-center w-[700px] max-sm:w-[400px]"
-          >
-            اكتشف قوة <span className="text-indigo-700">أوركا بوت</span>، الشريك
-            الذكي الذي يجمع بين الأناقة والوظائف المتعددة، يُعد
-            <span className="text-indigo-700">أوركا بوت</span> حلاً مبتكرًا
-            وشاملًا لإدارة السيرفر بكفاءة عالية، مما يجعل تجربة الإدارة أكثر
-            سلاسة وتنظيمًا مع مجموعة متنوعة من الأنظمة والخدمات التي تلبي
-            احتياجاتك الفريدة ...
+          <p className="text-lg text-gray-400 text-center w-[700px] max-sm:w-[400px]">
+            اكتشف قوة <span className="text-primary">أوركا بوت</span>، الشريك
+            الذكي الذي يجمع بين الأناقة والوظائف المتعددة، يُعد{" "}
+            <span className="text-primary">أوركا بوت</span> حلاً مبتكرًا وشاملًا
+            لإدارة السيرفر بكفاءة عالية، مما يجعل تجربة الإدارة أكثر سلاسة
+            وتنظيمًا مع مجموعة متنوعة من الأنظمة والخدمات التي تلبي احتياجاتك
+            الفريدة ...
           </p>
           <div className="flex flex-row justify-between items-center gap-5">
             <Button className="gradientBg py-2 px-6">ضفُ إلى سيرفرك</Button>
