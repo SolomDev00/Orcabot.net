@@ -126,13 +126,13 @@ const Navbar = () => {
   return (
     <header
       className={`header ${
-        scrolling ? "bg-white" : "bg-primary"
-      } duration-200 ${scrolling ? "bg-white" : "bg-primary"} ${
+        scrolling ? "bg-[#12131a]" : "bg-primary"
+      } duration-200 ${scrolling ? "bg-[#12131a]" : "bg-primary"} ${
         showMenu ? "menu-open" : ""
       }`}
       style={{
         display: `${scrolling === true ? "" : "none"}`,
-        background: `${window.scrollY < 10 ? "white" : ""}`,
+        background: `${window.scrollY < 10 ? "#12131a" : ""}`,
         animation: `${window.scrollY > 50 ? "fadeUpNav 0.4s ease-out" : ""}`,
         position: "fixed",
         top: 0,

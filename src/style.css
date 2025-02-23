@@ -26,6 +26,7 @@ html {
 body {
   overflow-x: hidden;
   direction: rtl;
+  background-color: #12131a;
 }
 
 @media (max-width: 767px) {
@@ -680,6 +681,63 @@ li.p-focus {
 
 .pay-btn:hover {
   background-color: #059669;
+}
+
+.bg-center {
+  position: absolute;
+  top: -300px;
+  left: 43%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
+  filter: drop-shadow(17px 130px 140px var(--primary-100));
+  z-index: 1;
+}
+
+.welcome-text {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
+  background-blend-mode: normal, screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-box {
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 32px;
+  box-shadow: inset 0 -7px 11px #a48fff1f;
+  display: flex;
+
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+}
+
+.liner {
+  background-image: linear-gradient(#6c35de 60%, #6e3ac8 40%);
+  background-size: 0% 100%;
+  transition: all 500ms ease-in-out;
+  display: inline;
+  background-repeat: no-repeat;
+}
+.liner:hover {
+  background-size: 100% 100%;
 }
 
 @tailwind base;

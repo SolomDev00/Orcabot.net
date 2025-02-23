@@ -5,7 +5,6 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import HomePage from "../views";
-import AboutUsPage from "../views/pages/AboutUs";
 import RootLayout from "../views/Layout";
 import NotFoundPage from "../views/errors/404-NotFound";
 // import AuthLayout from "../views/auth/Layout";
@@ -18,7 +17,6 @@ import RedirectPage from "../views/middlewares/307-Redirect";
 // import ResetPasswordPage from "../views/auth/pages/ResetPassword";
 import SuccessPage from "../views/events/Success";
 import FailedPage from "../views/events/Failed";
-import MenuPage from "../views/pages/Menu";
 // import { AuthenticatedRoute, GuestRoute } from "../views/auth/ProtectedRoute";
 import ProductPage from "../views/pages/Product";
 import SearchResults from "../views/pages/Search";
@@ -43,8 +41,6 @@ const routers = createHashRouter(
       {/* Root Layout */}
       <Route path="/" element={<RootLayout />} errorElement={<ErrorHandler />}>
         <Route index element={<HomePage />} />
-        <Route path="about-us" element={<AboutUsPage />} />
-        <Route path="menu" element={<MenuPage />} />
         <Route path="product" element={<ProductPage />} />
         <Route path="search" element={<SearchResults />} />
         <Route path="/cart" errorElement={<ErrorHandler />}>
