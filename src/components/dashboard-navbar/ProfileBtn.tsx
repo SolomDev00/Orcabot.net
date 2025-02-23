@@ -68,7 +68,7 @@ export default function ProfileBtn() {
                         className="flow-root rounded-md px-2 py-2 transition hover:bg-blue-100 ease-in-out duration-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
                       >
                         <span className="flex items-center gap-3">
-                          <link.icon className="text-primary w-5v h-5" />
+                          <link.icon className="text-primary w-5 h-5" />
                           <span className="text-base font-medium text-primary">
                             {link.name}
                           </span>

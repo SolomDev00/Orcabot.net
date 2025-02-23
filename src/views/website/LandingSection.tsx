@@ -1,39 +1,61 @@
-import { Link } from "react-router-dom";
-import LandingImg from "../../assets/landing.svg";
-import Button from "../../components/ui/elements/Button";
+import { SoStar } from "solom-icon";
 
 const LandingSection = () => {
   return (
-    <section id="landing" className="relative">
-      <div className="mt-36 h-auto">
-        <div className="w-full flex flex-row justify-between items-start container max-sm:flex-col max-sm:space-x-0">
-          <div className="flex flex-col justify-between items-start self-center w-[45%] max-sm:w-10/12 space-y-8 max-sm:items-center max-sm:space-y-3 -mt-72">
-            <h2 className="text-accent text-5xl font-semibold max-sm:text-3xl max-sm:text-center">
-              دجاج <span className="text-primary">BFC</span> الطعم اللي بيجمع
-              الأصحاب
-            </h2>
-            <p className="text-accent text-xl max-sm:text-lg max-sm:text-center pb-10">
-              دجاج طازج، متبل بطعمنا المميز، ومقلي بمقرمشية هتحبها, جرب ومتخليش
-              الفرصة تفوتك!
-            </p>
-            <div className="flex flex-row items-center space-x-3 max-sm:flex-col max-sm:space-y-3">
-              <Link to="/menu">
-                <Button className="px-6 rounded-3xl">أحجز وجبتك الأن</Button>
-              </Link>
+    <section id="hero">
+      <div className="mt-48 flex flex-col justify-center items-center max-sm:container">
+        <div className="flex flex-col justify-center items-center gap-8">
+          <a href="./pages/subscriptions.html">
+            <div
+              data-aos="fade-up"
+              className="welcome-box py-[8px] px-4 border border-[#7042f88b] opacity-[0.9] cursor-pointer"
+            >
+              <h3 className="welcome-text text-base pr-1">
+                متاح الأشتراكات الآن
+              </h3>
+              <SoStar className="text-[#8b64ff] mr-[10px] w-6" />
             </div>
-          </div>
-          <div className="w-[55%] max-sm:mt-10 max-sm:w-full">
-            <img
-              className="max-w-[105%] duration-300"
-              src={LandingImg}
-              alt="Landing"
-              loading="lazy"
-            />
+          </a>
+          <h2
+            data-aos="fade-up"
+            data-aos-duration="500"
+            className="text-3xl text-white text-center w-[500px] max-sm:text-2xl max-sm:w-[400px]"
+          >
+            <span className="liner cursor-pointer">
+              رفيقك الذكي لإدارة السيرفر الخاص بك{" "}
+            </span>
+            بكفاءة <span className="mark">عالية</span> وسهولة.
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="text-lg text-gray-400 text-center w-[700px] max-sm:w-[400px]"
+          >
+            اكتشف قوة <span className="text-indigo-700">أوركا بوت</span>، الشريك
+            الذكي الذي يجمع بين الأناقة والوظائف المتعددة، يُعد
+            <span className="text-indigo-700">أوركا بوت</span> حلاً مبتكرًا
+            وشاملًا لإدارة السيرفر بكفاءة عالية، مما يجعل تجربة الإدارة أكثر
+            سلاسة وتنظيمًا مع مجموعة متنوعة من الأنظمة والخدمات التي تلبي
+            احتياجاتك الفريدة ...
+          </p>
+          <div className="flex flex-row justify-between items-center gap-5">
+            <button
+              data-aos="fade-left"
+              data-aos-duration="900"
+              className="bg-indigo-600 hover:bg-indigo-500 py-2 px-4 flex items-center justify-center rounded-md font-medium text-black duration-500 dark:text-white disabled:bg-primary disabled:hover:bg-indigo-600 disabled:cursor-not-allowed"
+            >
+              ضفُ إلى سيرفرك
+            </button>
+            <button
+              data-aos="fade-right"
+              data-aos-duration="900"
+              className="bg-indigo-600 hover:bg-indigo-500 py-2 px-4 flex items-center justify-center rounded-md font-medium text-black duration-500 dark:text-white disabled:bg-primary disabled:hover:bg-indigo-600 disabled:cursor-not-allowed"
+            >
+              رؤية المميزات
+            </button>
           </div>
         </div>
       </div>
-      <div className="bg-left" />
-      <div className="bg-right" />
     </section>
   );
 };
