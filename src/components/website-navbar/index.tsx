@@ -261,7 +261,7 @@ const Navbar = () => {
                 <Link
                   to="/auth/login"
                   title="تسجيل الدخول"
-                  className={`gradientBg px-8 py-3 text-white font-medium rounded-3xl text-base`}
+                  className={`gradientBg px-8 py-3 text-white font-medium rounded-3xl text-base hover:scale-105 duration-300`}
                 >
                   تسجيل الدخول
                 </Link>
