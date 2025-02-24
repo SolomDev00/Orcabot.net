@@ -150,7 +150,7 @@ const Navbar = () => {
           animation: `${window.scrollY > 50 ? "fadeUpNav 0.4s ease-out" : ""}`,
         }}
       >
-        <div className="navbar-items">
+        <div className="w-full flex flex-row items-center justify-between">
           <NavLink
             onClick={() => scroll.scrollToTop()}
             to="/"
@@ -159,6 +159,7 @@ const Navbar = () => {
             className="logo"
           >
             <img className={`ml-0`} src={LogoImg} alt="logo" />
+            <h3 className="text-xl font-semibold text-gray-400">أوركا بوت</h3>
           </NavLink>
           <nav>
             <ul className="navigationBar hide">
@@ -208,68 +209,70 @@ const Navbar = () => {
               </li>
             </ul>
           </nav>
-        </div>
-        <div className="flex flex-row items-center gap-5">
-          <div className="relative">
-            <div
-              className={
-                location.pathname.includes("/search")
-                  ? "bg-[#FCE9E9] p-1.5 rounded-full cursor-pointer"
-                  : "bg-transparent p-1.5 rounded-full cursor-pointer"
-              }
-              onClick={() => setIsSearchOpen(true)}
-            >
-              <SoSearch
-                className={
-                  location.pathname.includes("/search")
-                    ? "text-primary w-6 h-6"
-                    : "text-gray-600 w-6 h-6"
+          <div className="flex flex-row items-center gap-5">
+            <div className="flex flex-row items-center gap-5">
+              <div className="relative">
+                <div
+                  className={
+                    location.pathname.includes("/search")
+                      ? "bg-[#FCE9E9] p-1.5 rounded-full cursor-pointer"
+                      : "bg-transparent p-1.5 rounded-full cursor-pointer"
+                  }
+                  onClick={() => setIsSearchOpen(true)}
+                >
+                  <SoSearch
+                    className={
+                      location.pathname.includes("/search")
+                        ? "text-primary w-6 h-6"
+                        : "text-gray-400 w-6 h-6"
+                    }
+                  />
+                </div>
+                {isSearchOpen && (
+                  <div className="absolute top-8 -right-64 w-[300px] bg-white shadow-lg p-2 flex items-center border rounded-md">
+                    <input
+                      type="text"
+                      placeholder="ابحث عن الباقات..."
+                      className="w-full p-2 outline-none"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                    />
+                    <X
+                      className="ml-2 text-red-600 cursor-pointer"
+                      onClick={() => setIsSearchOpen(false)}
+                    />
+                  </div>
+                )}
+              </div>
+              <NavLink
+                to={"/cart/empty"}
+                className={({ isActive }: { isActive: boolean }) =>
+                  isActive
+                    ? "bg-[#FCE9E9] p-1.5 rounded-full cursor-pointer"
+                    : "bg-transparent p-1.5 rounded-full cursor-pointer"
                 }
-              />
+              >
+                <SoShoppingCart className="w-6 h-6 text-primary" />
+              </NavLink>
             </div>
-            {isSearchOpen && (
-              <div className="absolute top-8 -right-64 w-[300px] bg-white shadow-lg p-2 flex items-center border rounded-md">
-                <input
-                  type="text"
-                  placeholder="ابحث عن الباقات..."
-                  className="w-full p-2 outline-none"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                />
-                <X
-                  className="ml-2 text-primary cursor-pointer"
-                  onClick={() => setIsSearchOpen(false)}
-                />
+            {isLoggedIn ? (
+              <div className="action-buttons hide max-sm:hidden">
+                <Link
+                  to="/auth/login"
+                  title="تسجيل الدخول"
+                  className={`gradientBg px-8 py-3 text-white font-medium rounded-3xl text-base`}
+                >
+                  تسجيل الدخول
+                </Link>
+              </div>
+            ) : (
+              <div className="w-full flex flex-row justify-end gap-3 max-sm:hidden">
+                <ProfileBtn />
               </div>
             )}
           </div>
-          <NavLink
-            to={"/cart/empty"}
-            className={({ isActive }: { isActive: boolean }) =>
-              isActive
-                ? "bg-[#FCE9E9] p-1.5 rounded-full cursor-pointer"
-                : "bg-transparent p-1.5 rounded-full cursor-pointer"
-            }
-          >
-            <SoShoppingCart className="w-6 h-6 text-primary" />
-          </NavLink>
         </div>
-        {isLoggedIn ? (
-          <div className="action-buttons hide max-sm:hidden">
-            <Link
-              to="/auth/login"
-              title="تسجيل الدخول"
-              className={`gradientBg px-8 py-3 text-white font-medium rounded-3xl text-base`}
-            >
-              تسجيل الدخول
-            </Link>
-          </div>
-        ) : (
-          <div className="w-full flex flex-row justify-end gap-3 max-sm:hidden">
-            <ProfileBtn />
-          </div>
-        )}
         <button
           aria-label="Toggle menu"
           className="burger-menu z-20 duration-150"
