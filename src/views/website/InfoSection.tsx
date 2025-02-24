@@ -37,7 +37,7 @@ const InfoSection = () => {
   ];
 
   return (
-    <section id="info">
+    <section id="info" className="mt-20">
       {infoItems.map((item, index) => (
         <div
           key={index}

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const LandingSection = () => {
   return (
     <section id="hero">
+      <div className="bg-center" />
       <div className="mt-40 flex flex-col justify-center items-center max-sm:container">
         <div className="flex flex-col justify-center items-center gap-8">
           <Link to="./pages/subscriptions.html">
@@ -30,8 +31,12 @@ const LandingSection = () => {
             الفريدة ...
           </p>
           <div className="flex flex-row justify-between items-center gap-5">
-            <Button className="gradientBg py-2 px-6">ضفُ إلى سيرفرك</Button>
-            <Button className="gradientBg py-2 px-6">رؤية المميزات</Button>
+            <Button className="gradientBg py-2 px-6 hover:scale-105">
+              ضفُ إلى سيرفرك
+            </Button>
+            <Button className="gradientBg py-2 px-6 hover:scale-105">
+              رؤية المميزات
+            </Button>
           </div>
         </div>
       </div>

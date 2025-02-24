@@ -685,7 +685,7 @@ li.p-focus {
 
 .bg-center {
   position: absolute;
-  top: -300px;
+  top: -444px;
   left: 43%;
   width: 200px;
   height: 200px;
@@ -696,7 +696,7 @@ li.p-focus {
       rgba(255, 255, 255, 0.4)
     ),
     linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
-  filter: drop-shadow(17px 130px 140px var(--primary-100));
+  filter: drop-shadow(17px 130px 140px var(--primary-200));
   z-index: 1;
 }
 

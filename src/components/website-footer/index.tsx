@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import LogoImg from "../../assets/logo.svg";
+import LogoImg from "../../assets/logo.png";
 import Facebook from "../../assets/facebook.svg";
 import Insta from "../../assets/instagram.svg";
 import LinkedIn from "../../assets/linkedIn.svg";
@@ -27,7 +27,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="bg-white border-t border-[#DFDFDF] pb-5 relative overflow-hidden"
+      className="bg-[#12131a] border-t border-[#DFDFDF] pb-5 relative overflow-hidden"
     >
       <div className="container relative z-50">
         <div className="w-full flex flex-row items-start justify-between gap-5 pt-10 max-sm:flex-col max-sm:justify-center max-sm:gap-10">
@@ -38,7 +38,7 @@ const Footer = () => {
               alt="Logo"
               onClick={() => handleScroll("landing")}
             />
-            <p className="text-black text-base">
+            <p className="text-white text-base">
               دجاج طازج، متبل بطعمنا السري، مقلي بمقرمشة هتحبها من أول قضمة
             </p>
             <div className="flex flex-row items-center gap-5">
@@ -63,23 +63,23 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex-shrink-0 w-1/4 max-sm:w-full">
-            <h4 className="text-lg max-sm:text-base text-[#110229] font-extrabold uppercase">
+            <h4 className="text-lg max-sm:text-base text-white font-extrabold uppercase">
               شركتنا
             </h4>
             <ul className="flex flex-col items-start gap-3 mt-5">
               <li
-                className="text-base font-semibold max-sm:text-sm text-[#374151] cursor-pointer"
+                className="text-base font-semibold max-sm:text-sm text-white/90 cursor-pointer"
                 onClick={() => handleScroll("featuredSection")}
               >
                 قائمة الطعام
               </li>
               <Link to="/about-us" onClick={() => scroll(0, 0)}>
-                <li className="text-base font-semibold max-sm:text-sm text-[#374151]">
+                <li className="text-base font-semibold max-sm:text-sm text-white/90">
                   المميزات
                 </li>
               </Link>
               <li
-                className="text-base font-semibold max-sm:text-sm text-[#374151] cursor-pointer"
+                className="text-base font-semibold max-sm:text-sm text-white/90 cursor-pointer"
                 onClick={() => handleScroll("trendingSection")}
               >
                 من نحن
@@ -87,12 +87,12 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex-shrink-0 w-1/4 max-sm:w-full">
-            <h4 className="text-lg max-sm:text-base text-[#110229] font-extrabold uppercase">
+            <h4 className="text-lg max-sm:text-base text-white font-extrabold uppercase">
               الاتصال
             </h4>
             <ul className="flex flex-col items-start gap-3 mt-5">
               <li
-                className="flex items-center gap-3 text-base font-semibold max-sm:text-sm text-[#374151] cursor-pointer"
+                className="flex items-center gap-3 text-base font-semibold max-sm:text-sm text-white/90 cursor-pointer"
                 onClick={() => {
                   navigator.clipboard.writeText("+11 2 3456 7890");
                   toast.success("The number was copied successfully!");
@@ -103,7 +103,7 @@ const Footer = () => {
                 +11 2 3456 7890
               </li>
               <li
-                className="flex items-center gap-3 text-base font-semibold max-sm:text-sm text-[#374151] cursor-pointer"
+                className="flex items-center gap-3 text-base font-semibold max-sm:text-sm text-white/90 cursor-pointer"
                 onClick={() => {
                   navigator.clipboard.writeText("cit@cit-fei.org");
                   toast.success("The email was copied successfully!");
@@ -114,7 +114,7 @@ const Footer = () => {
                 bfc@support.eg
               </li>
               <li
-                className="flex items-center gap-3 text-base font-semibold max-sm:text-sm text-[#374151] cursor-pointer"
+                className="flex items-center gap-3 text-base font-semibold max-sm:text-sm text-white/90 cursor-pointer"
                 onClick={() => {
                   navigator.clipboard.writeText(
                     "51 Abbas El-Akkad, Al Manteqah Al Oula, Nasr City, Cairo"
@@ -134,11 +134,11 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex-shrink-0 w-1/4 max-sm:w-full">
-            <h4 className="text-lg max-sm:text-base text-[#110229] font-extrabold uppercase">
+            <h4 className="text-lg max-sm:text-base text-white font-extrabold uppercase">
               الاشتراك
             </h4>
             <ul className="flex flex-col items-start gap-6 mt-5">
-              <p className="text-[#8F90A6] text-sm font-semibold">
+              <p className="text-white/90 text-sm font-semibold">
                 اشترك للحصول على أحدث الأخبار والعروض منا
               </p>
               <div className="flex items-center border border-gray-300 rounded-lg pr-2">
@@ -165,7 +165,7 @@ const Footer = () => {
       </div>
       <div className="container flex flex-col items-center gap-3 max-sm:mb-3">
         <div className="w-full h-[1px] bg-[#DFDFDF] mt-10 mb-3" />
-        <p className="text-sm font-bold text-[#4B5563] max-sm:text-xs">
+        <p className="text-sm font-bold text-white max-sm:text-xs">
           جميع حقوق الطبع والنشر مملوكة لشركة{" "}
           <span className="gradientText">BFC</span> © 2025
         </p>

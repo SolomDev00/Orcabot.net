@@ -132,7 +132,7 @@ const Navbar = () => {
       }`}
       style={{
         display: `${scrolling === true ? "" : "none"}`,
-        background: `${window.scrollY < 10 ? "#12131a" : ""}`,
+        background: `${window.scrollY < 10 ? "transparent" : ""}`,
         animation: `${window.scrollY > 50 ? "fadeUpNav 0.4s ease-out" : ""}`,
         position: "fixed",
         top: 0,
